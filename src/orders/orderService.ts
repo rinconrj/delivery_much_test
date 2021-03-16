@@ -15,11 +15,12 @@ export async function addOrder(products: IProduct[]): Promise<IOrder> {
     total: getTotalPrice(populatedProduct),
   }
 
-  const newOrder = await Order.create(orderObj)
+  const newOrder = await Order.create(orderObj).then((data) => data.toObject())
 
   await Promise.all(populatedProduct.map(updateProductAvalability))
+  delete newOrder._id
 
-  return newOrder?.toObject()
+  return newOrder
 }
 
 async function getNewId(): Promise<number> {
@@ -33,7 +34,7 @@ async function getNewId(): Promise<number> {
 }
 
 export async function fetchAllOrders(): Promise<IOrder[]> {
-  const orders = await Order.find().lean()
+  const orders = await Order.find({}, '-_id').lean()
 
   return orders
 }
@@ -41,7 +42,7 @@ export async function fetchAllOrders(): Promise<IOrder[]> {
 export async function getOrderById(id) {
   if (!id) throw new Error('missing_params')
 
-  return Order.findOne({ id }).lean()
+  return Order.findOne({ id }, '-_id').lean()
 }
 
 function getTotalPrice(productsArray: IProduct[]): number {
