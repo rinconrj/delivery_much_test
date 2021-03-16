@@ -182,36 +182,36 @@ POST /order
 Body:
 
 [
-    {
-      "name": "Letucce",
-      "quantity": 4,
-    },
-    {
-      "name": "Onion",
-      "quantity": 4,
-    },
-    ...
-  ]
+  {
+    "name": "Letucce",
+    "quantity": 4,
+  },
+  {
+    "name": "Onion",
+    "quantity": 4,
+  },
+  ...
+]
 
 
 Response:
 
 {
-	"products": [
-		{
-		 "name": "Letucce",
-		 "quantity": 4,
-		 "price":1.99
-	  },
-	  {
-		 "name": "Onion",
-		 "quantity": 4,
-		 "price":4
-		},
-		...
+  "products": [
+    {
+      "name": "Letucce",
+      "quantity": 4,
+      "price":1.99
+    },
+    {
+      "name": "Onion",
+      "quantity": 4,
+      "price":4
+    },
+    ...
     ],
-	"total": 23.96,
-	"id": 1,
+  "total": 23.96,
+  "id": 1,
 }
 
 ```
@@ -224,23 +224,23 @@ GET /order
 
 Response:
 [
-	{
-		"products": [
-			{
-			 "name": "Letucce",
-			 "quantity": 4,
-			 "price":1.99
-		    },
-		   {
-			 "name": "Onion",
-			 "quantity": 4,
-			 "price":4
-			},
-			...],
-		"total": 23.96,
-		"id": 1,
-	},
-	...
+  {
+    "products": [
+      {
+        "name": "Letucce",
+        "quantity": 4,
+        "price":1.99
+        },
+        {
+        "name": "Onion",
+        "quantity": 4,
+        "price":4
+      },
+      ...],
+    "total": 23.96,
+    "id": 1,
+  },
+  ...
 ]
 
 
@@ -254,23 +254,23 @@ GET /order/:id
 
 > Response:
 [
-	{
-		"products": [
-			{
-			 "name": "Letucce",
-			 "quantity": 4,
-			 "price":1.99
-		    },
-		   {
-			 "name": "Onion",
-			 "quantity": 4,
-			 "price":4
-			},
-			...],
-		"total": 23.96,
-		"id": 1,
-	},
-	...
+  {
+    "products": [
+      {
+        "name": "Letucce",
+        "quantity": 4,
+        "price":1.99
+        },
+        {
+        "name": "Onion",
+        "quantity": 4,
+        "price":4
+      },
+      ...],
+    "total": 23.96,
+    "id": 1,
+  },
+  ...
 ]
 
 
