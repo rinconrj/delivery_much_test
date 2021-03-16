@@ -6,8 +6,7 @@ export async function getProductById(req, res) {
 }
 
 export async function getProducts(req, res) {
-  const { skip, limit } = req.query
-  return service.fetchAllProducts(skip, limit).then((data) => res.json(data))
+  return service.fetchAllProducts().then((data) => res.json(data))
 }
 
 export async function addProduct(req, res) {
@@ -39,6 +38,6 @@ export async function updateProduct(req, res) {
 }
 
 export async function deleteProduct(req, res) {
-  const { id } = req.query
+  const { id } = req.params
   return service.deleteProduct(id).then((data) => res.json(data))
 }

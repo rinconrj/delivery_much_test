@@ -9,4 +9,4 @@ export default express
   .post('/product/import', controller.importProducts)
   .post('/product/', controller.addProduct)
   .put('/product/:id', controller.updateProduct)
-  .delete('/product/', controller.deleteProduct)
+  .delete('/product/:id', controller.deleteProduct)

@@ -27,10 +27,7 @@ export async function getProductById(_id: string) {
 }
 
 export async function fetchAllProducts(skip?: string, limit?: string) {
-  return Product.find({})
-    .skip(parseInt(skip) | 0)
-    .limit(parseInt(limit) | 100)
-    .lean()
+  return Product.find({}).lean()
 }
 
 export async function updateProduct(id, body) {
